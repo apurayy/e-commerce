@@ -34,7 +34,7 @@
             <td><?php echo $row['email']; ?></td>
             <td>
                 <a href="">Edit</a>
-                <a href="delete.php?id=<?php echo $row['id'];?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
+                <a href="delete.php?id=<?php echo $row['id'];?>" onclick="return confirm('Are you sure delete?')">Delete</a>
             </td>
           </tr>
 

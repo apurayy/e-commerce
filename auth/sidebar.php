@@ -21,7 +21,7 @@
           <div id="sidebar" class="sidebar sidebar-with-footer">
             <!-- Aplication Brand -->
             <div class="app-brand">
-              <a href="/index.html">
+              <a href="dashboard.php">
                 <img src="images/logo.png" alt="Mono">
                 <span class="brand-name">My Shop</span>
               </a>
@@ -31,18 +31,13 @@
               <!-- sidebar menu -->
               <ul class="nav sidebar-inner" id="sidebar-menu">
                   <li class="active">
-                    <a class="sidenav-item-link" href="index.html">
+                    <a class="sidenav-item-link" href="dashboard.php">
                       <i class="mdi mdi-briefcase-account-outline"></i>
                       <span class="nav-text">Business Dashboard</span>
                     </a>
                   </li>
 
-                  <li>
-                    <a class="sidenav-item-link" href="analytics.html">
-                      <i class="mdi mdi-chart-line"></i>
-                      <span class="nav-text">Analytics Dashboard</span>
-                    </a>
-                  </li>
+                  
 
                   <li class="section-title">
                     Apps
@@ -68,14 +63,14 @@
                     <ul  class="collapse"  id="users"
                       data-parent="#sidebar-menu">
                       <div class="sub-menu">
-                            <li>
+                            <!-- <li>
                               <a class="sidenav-item-link" href="show_user.php">
                                 <span class="nav-text">User Manage</span>
                               </a>
-                            </li>
+                            </li> -->
                             <li >
-                              <a class="sidenav-item-link" href="user-activities.html">
-                                <span class="nav-text">User Activities</span>
+                              <a class="sidenav-item-link" href="all_user.php">
+                                <span class="nav-text">User list</span>
                               </a>
                             </li>
                             <li >
