@@ -11,6 +11,13 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="card card-default">
+                    <h4 class="text-warning p-3">
+                            <?php
+                                if(isset($_GET['msg'])){
+                                    echo $_GET['msg'];
+                                }
+                            ?>
+                        </h4>
                       <div class="card-header">
                         <h2>User List</h2>
                         
@@ -51,7 +58,7 @@
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                                         <a class="dropdown-item" href="#">view</a>
-                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="edit.php?id=<?php echo $row['id'];?>">Edit</a>
                                         <a class="dropdown-item" href="delete.php?id=<?php echo $row['id'];?>" onclick="return confirm('Are you sure delete?')">Delete</a>
                                     </div>
                                     </div>
