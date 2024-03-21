@@ -17,4 +17,20 @@
         }
     }
 
+    if(isset($_GET['cat_id'])){
+        $cat_id = $_GET['cat_id'];
+
+        $cat_query = "DELETE FROM catagory WHERE cat_id=$cat_id";
+        $cat_sql = $conn->query($cat_query);
+
+        if($cat_sql){
+            $msg = "Category Delete Successfull!";
+            header("location:all_cat.php?cat_msg=$msg");
+        }
+        else{
+            $msg = "OOPS! Category Delete Faild.";
+            header("location:all_cat.php?cat_msg=$msg");
+        }
+    }
+
 ?>
