@@ -3,12 +3,15 @@
 
     if(isset($_POST['cat_add'])){
         $cat_name = $_POST['cat_name'];
+        $cat_images = $_FILES['cat_images']['name'];
+        $tmp_name = $_FILES['cat_images']['tmp_name'];
 
-        $query = "INSERT INTO catagory(cat_name) VALUE ('$cat_name')";
+        $query = "INSERT INTO catagory(cat_name,cat_image) VALUES ('$cat_name','$cat_images')";
 
         $sql = $conn->query($query);
 
         if ($sql) {
+            move_uploaded_file($tmp_name, 'upload/'.$cat_images);
             $msg = "Category Add Successfull!";
             header("location:add_cat.php?msg1=$msg");
         } else {
@@ -47,7 +50,7 @@ if (isset($_SESSION['username'])) {
                                 ?>
                             </h4>
                             <div class="card-header">
-                                <form action="" method="post">
+                                <form action="" method="post" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="form-group col-md-12 mb-4">
                                             <input type="text" class="form-control input-lg" placeholder="Category Name" name="cat_name" required>

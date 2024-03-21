@@ -26,12 +26,15 @@
         $cat_id = $_GET['cat_id'];
 
         $cat_name = $_POST['cat_name'];
+        $cat_images = $_FILES['cat_images']['name'];
+        $tmp_name = $_FILES['cat_images']['tmp_name'];
 
-        $cat_query = "UPDATE catagory SET cat_name='$cat_name' WHERE cat_id=$cat_id";
+        $cat_query = "UPDATE catagory SET cat_name='$cat_name',cat_image='$cat_images' WHERE cat_id=$cat_id";
 
         $cat_sql = $conn->query($cat_query);
 
         if($cat_sql){
+            move_uploaded_file($tmp_name, 'upload/'.$cat_images);
             $msg = "Category Update Successfull!";
             header("location:all_cat.php?cat_msg=$msg");
         }

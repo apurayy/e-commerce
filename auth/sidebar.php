@@ -18,22 +18,17 @@
                 <img src="images/logo.png" alt="Mono">
                 <span class="brand-name">Dashboard</span>
               </a>
+
+              
             </div>
             <!-- begin sidebar scrollbar -->
             <div class="sidebar-left" data-simplebar style="height: 100%;">
               <!-- sidebar menu -->
               <ul class="nav sidebar-inner" id="sidebar-menu">
-                  <li>
-                    <a class="sidenav-item-link" href="team.html">
-                      <i class="mdi mdi-account-group"></i>
-                      <span class="nav-text">Team</span>
-                    </a>
-                  </li>
-
+                  
                   <li class="section-title">
                     Pages
                   </li>
-
                   <li  class="has-sub" >
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#cate"
                       aria-expanded="false" aria-controls="cate">
@@ -95,6 +90,13 @@
                             </li>
                       </div>
                     </ul>
+                  </li>
+
+                  <li>
+                    <a class="sidenav-item-link" href="team.html">
+                      <i class="mdi mdi-account-group"></i>
+                      <span class="nav-text">Team</span>
+                    </a>
                   </li>
 
               </ul>

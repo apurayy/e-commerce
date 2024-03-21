@@ -51,7 +51,7 @@ if (isset($_SESSION['username'])) {
                                 <tr>
                                     <td><?php echo $row['cat_id']; ?></td>
                                     <td><?php echo $row['cat_name']; ?></td>
-                                    <td>Img</td>
+                                    <td><img src="upload/<?php echo $row['cat_image'];?>" alt=""></td>
                                     <td>
                                         <div class="dropdown">
                                         <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
