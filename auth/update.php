@@ -7,12 +7,15 @@
         $name = $_POST['name'];
         $username = $_POST['username'];
         $email = $_POST['email'];
+        $user_images = $_FILES['user_images']['name'];
+        $tmp_name = $_FILES['user_images']['tmp_name'];
 
-        $query = "UPDATE user SET name='$name',username='$username',email='$email' WHERE id=$id";
+        $query = "UPDATE user SET name='$name',username='$username',email='$email',image='$user_images' WHERE id=$id";
 
         $sql= $conn->query($query);
 
         if($sql){
+            move_uploaded_file($tmp_name, 'upload/'.$user_images);
             $msg = "Data Update Successfull!";
             header("location:all_user.php?msg=$msg");
         }

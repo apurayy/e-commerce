@@ -49,7 +49,7 @@
                                 <td><?php echo $row['name']; ?></td>
                                 <td><?php echo $row['username']; ?></td>
                                 <td><?php echo $row['email']; ?></td>
-                                <td>Img</td>
+                                <td><img src="upload/<?php echo $row['image'];?>" alt=""></td>
                                 <td>
                                     <div class="dropdown">
                                     <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"

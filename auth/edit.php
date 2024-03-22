@@ -23,7 +23,7 @@
                   <div class="card-body px-5 pb-5 p-2">
                     <h4 class="text-dark text-center mb-5">Edit User</h4>
 
-                    <form action="update.php?id=<?php echo $row['id'];?>" method="post">
+                    <form action="update.php?id=<?php echo $row['id'];?>" method="post" enctype="multipart/form-data">
                       <div class="row">
                         <div class="form-group col-md-12 mb-4">
                           <input type="text" class="form-control input-lg"  value="<?php echo $row['name'];?>" name="name">
@@ -33,6 +33,10 @@
                         </div>
                         <div class="form-group col-md-12 mb-4">
                           <input type="email" class="form-control input-lg" value="<?php echo $row['email'];?>" name="email">
+                        </div>
+
+                        <div class="form-group col-md-12 mb-4">
+                          <input type="file" class="form-control input-lg"  value="<?php echo $row['image'];?>" name="user_images">
                         </div>
                         
                         <div class="col-md-12">

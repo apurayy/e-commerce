@@ -9,11 +9,11 @@
 
         if($sql){
             $msg = "User Data Delete Successfull!";
-            header("location:show_user.php?msg=$msg");
+            header("location:all_user.php?msg=$msg");
         }
         else{
             $msg = "OOPS! User Data Delete Faild.";
-            header("location:show_user.php?msg=$msg");
+            header("location:all_user.php?msg=$msg");
         }
     }
 
