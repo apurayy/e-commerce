@@ -1,6 +1,7 @@
 <?php
     require_once('db/config.php');
     
+    //user_update==============================
     if(isset($_GET['id'])){
         $id = $_GET['id'];
 
@@ -25,6 +26,8 @@
         }
     }
 
+
+    //Category_update=====================
     if(isset($_GET['cat_id'])){
         $cat_id = $_GET['cat_id'];
 
@@ -44,6 +47,31 @@
         else{
             $msg = "Category Update Faild!";
             header("location:cat_edit.php?cat_msg=$msg");
+        }
+
+    }
+
+
+    //brand_update========================
+    if(isset($_GET['brand_id'])){
+        $brand_id = $_GET['brand_id'];
+
+        $brand_name = $_POST['brand_name'];
+        $brand_images = $_FILES['brand_images']['name'];
+        $tmp_name = $_FILES['brand_images']['tmp_name'];
+
+        $brand_query = "UPDATE brand SET brand_name='$brand_name',brand_image='$brand_images' WHERE brand_id=$brand_id";
+
+        $brand_sql = $conn->query($brand_query);
+
+        if($brand_sql){
+            move_uploaded_file($tmp_name, 'upload/'.$brand_images);
+            $msg = "Brand Update Successfull!";
+            header("location:show_brand.php?brand_msg=$msg");
+        }
+        else{
+            $msg = "Brand Update Faild!";
+            header("location:show_brand.php?brand_msg=$msg");
         }
 
     }

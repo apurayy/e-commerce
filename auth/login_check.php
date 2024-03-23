@@ -11,8 +11,10 @@
     $query = "SELECT * FROM user WHERE username='$username' && password='$password'";
     $sql = $conn->query($query);
     if($sql->num_rows>0){
+        $rows=$sql->fetch_assoc();
         echo "Login Successfull!";
         $_SESSION['username'] = $username;
+        $_SESSION['user_image'] = $rows['image'];
         header("location:dashboard.php");
     }
     else{

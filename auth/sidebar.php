@@ -29,6 +29,7 @@
                   <li class="section-title">
                     Pages
                   </li>
+
                   <li  class="has-sub" >
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#cate"
                       aria-expanded="false" aria-controls="cate">
@@ -55,6 +56,31 @@
                   </li>
 
                   <li  class="has-sub" >
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#brand"
+                      aria-expanded="false" aria-controls="brand">
+                      <i class="mdi mdi-image-filter-none"></i>
+                      <span class="nav-text">Brand</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse"  id="brand"
+                      data-parent="#sidebar-menu">
+                      <div class="sub-menu">
+                            
+                            <li >
+                              <a class="sidenav-item-link" href="show_brand.php">
+                                <span class="nav-text">All Brand</span>
+                              </a>
+                            </li>
+                            <li >
+                              <a class="sidenav-item-link" href="add_brand.php">
+                                <span class="nav-text">Add Brand</span>
+                              </a>
+                            </li>
+                            
+                      </div>
+                    </ul>
+                  </li>
+
+                  <li  class="has-sub" >
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users"
                       aria-expanded="false" aria-controls="users">
                       <i class="mdi mdi-image-filter-none"></i>
@@ -73,21 +99,32 @@
                                 <span class="nav-text">User list</span>
                               </a>
                             </li>
+                            
+                      </div>
+                    </ul>
+                  </li>
+
+                  <li  class="has-sub" >
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#product"
+                      aria-expanded="false" aria-controls="product">
+                      <i class="mdi mdi-image-filter-none"></i>
+                      <span class="nav-text">Products</span> <b class="caret"></b>
+                    </a>
+                    <ul  class="collapse"  id="product"
+                      data-parent="#sidebar-menu">
+                      <div class="sub-menu">
+                            
                             <li >
-                              <a class="sidenav-item-link" href="user-profile-settings.html">
-                                <span class="nav-text">User Profile Settings</span>
+                              <a class="sidenav-item-link" href="show_product.php">
+                                <span class="nav-text">Products list</span>
                               </a>
                             </li>
                             <li >
-                              <a class="sidenav-item-link" href="user-account-settings.html">
-                                <span class="nav-text">User Account Settings</span>
+                              <a class="sidenav-item-link" href="add_product.php">
+                                <span class="nav-text">Add Product</span>
                               </a>
                             </li>
-                            <li >
-                              <a class="sidenav-item-link" href="user-planing-settings.html">
-                                <span class="nav-text">User Planing Settings</span>
-                              </a>
-                            </li>
+                            
                       </div>
                     </ul>
                   </li>
