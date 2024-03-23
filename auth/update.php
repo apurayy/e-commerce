@@ -77,4 +77,31 @@
     }
 
 
+    //product_update========================
+    if(isset($_GET['product_id'])){
+        $product_id = $_GET['product_id'];
+
+        $product_name = $_POST['product_name'];
+        $product_regular_price = $_POST['product_regular_price'];
+        $product_sale_price = $_POST['product_sale_price'];
+        $product_image = $_FILES['product_image']['name'];
+        $tmp_name = $_FILES['product_image']['tmp_name'];
+
+        $product_query = "UPDATE product SET product_name='$product_name',product_regular_price='$product_regular_price',product_sale_price='$product_sale_price',product_image='$product_image' WHERE product_id=$product_id";
+
+        $product_sql = $conn->query($product_query);
+
+        if($product_sql){
+            move_uploaded_file($tmp_name, 'upload/'.$product_image);
+            $msg = "Product Update Successfull!";
+            header("location:show_product.php?product_msg=$msg");
+        }
+        else{
+            $msg = "Product Update Faild!";
+            header("location:show_product.php?product_msg=$msg");
+        }
+
+    }
+
+
 ?>

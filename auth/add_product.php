@@ -2,21 +2,25 @@
     include 'db/config.php';
 
     if(isset($_POST['product_add'])){
-        $cat_name = $_POST['cat_name'];
-        $cat_images = $_FILES['cat_images']['name'];
-        $tmp_name = $_FILES['cat_images']['tmp_name'];
+        $product_name = $_POST['product_name'];
+        $product_regular_price = $_POST['product_regular_price'];
+        $product_sale_price = $_POST['product_sale_price'];
+        $brand_id = $_POST['brand_id'];
+        $cat_id = $_POST['cat_id'];
+        $product_images = $_FILES['product_images']['name'];
+        $tmp_name = $_FILES['product_images']['tmp_name'];
 
-        $query = "INSERT INTO catagory(cat_name,cat_image) VALUES ('$cat_name','$cat_images')";
+        $query = "INSERT INTO product(product_name, product_regular_price, product_sale_price, brand_id, cat_id, product_image) VALUES ('$product_name','$product_regular_price','$product_sale_price','$brand_id','$cat_id','$product_images')";
 
         $sql = $conn->query($query);
 
         if ($sql) {
-            move_uploaded_file($tmp_name, 'upload/'.$cat_images);
-            $msg = "Category Add Successfull!";
-            header("location:add_cat.php?msg1=$msg");
+            move_uploaded_file($tmp_name, 'upload/'.$product_images);
+            $msg = "Product Add Successfull!";
+            header("location:add_product.php?msg1=$msg");
         } else {
-            $msg = "Category Add Faild!";
-            header("location:add_cat.php?msg1=$msg");
+            $msg = "Product Add Faild!";
+            header("location:add_product.php?msg1=$msg");
         }
     }
 

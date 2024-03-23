@@ -53,4 +53,22 @@
         }
     }
 
+
+    //product_delete================================
+    if(isset($_GET['product_id'])){
+        $product_id = $_GET['product_id'];
+
+        $product_query = "DELETE FROM product WHERE product_id=$product_id";
+        $product_sql = $conn->query($product_query);
+
+        if($product_sql){
+            $msg = "Product Delete Successfull!";
+            header("location:show_product.php?product_msg=$msg");
+        }
+        else{
+            $msg = "Product Delete Faild.";
+            header("location:show_product.php?product_msg=$msg");
+        }
+    }
+
 ?>
