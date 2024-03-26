@@ -55,7 +55,7 @@
                            </ul>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="product.html">Products</a>
+                           <a class="nav-link" href="product.php">Products</a>
                         </li>
                         <li class="nav-item">
                            <a class="nav-link" href="blog_list.html">Blog</a>
@@ -137,6 +137,7 @@
                                           <tr>
                                              <th>Product Name</th>
                                              <th>Product Quntity</th>
+                                             <th>Remove</th>
                                           </tr>
                                           <?php 
                                           
@@ -146,14 +147,20 @@
                                                       <tr>
                                                          <td><?php echo $single_cart['product_name'];?></td>
                                                          <td><?php echo $single_cart['qty'];?></td>
+                                                         <td>
+                                                         <a href="remove_item.php?product_id=<?php echo $single_cart['pro_id'] ?>" class="btn btn-warning text-white">Remove</a>
+                                                         </td>
                                                          
                                                       </tr>
                                                    <?php
                                                 }
                                              }
                                           
+                                             
+
                                              if(isset($_GET['remove'])){
                                                 session_destroy();
+                                                
                                              }
                                           ?>
                                              

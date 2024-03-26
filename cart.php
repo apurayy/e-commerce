@@ -16,6 +16,7 @@
                     <tr>
                         <th>SL No</th>
                         <th>Product Name</th>
+                        <th>Product Image</th>
                         <th>Product Price</th>
                         <th>Product Qty</th>
                         <th>Product Total Price</th>
@@ -36,6 +37,10 @@
                             <td>
                                 <?php echo $single_cart['product_name'] ?>
                                 <input type="hidden" name="pro_id" value="<?php echo $single_cart['pro_id'] ?>">
+                            </td>
+
+                            <td>
+                                <img width="150px" height="150px" src="auth/upload/<?php echo $single_cart['image'] ?>" alt="">
                             </td>
 
                             <td><?php echo $price = $single_cart['product_price'] ?></td>

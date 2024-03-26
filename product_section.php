@@ -1,8 +1,15 @@
 <?php
-   
+   include('auth/db/config.php');
    if(isset($_GET['id'])){
       $pro_id = $_GET['id'];
       
+      
+      $query = "SELECT * FROM product where product_id=$pro_id";
+      $sql = $conn->query($query);
+      
+      $row=$sql->fetch_assoc();
+      
+
       if(!empty($_SESSION['cart'])){
          $pro_id_check = array_column($_SESSION['cart'],'pro_id');
 
@@ -12,8 +19,9 @@
          else{
             $item = [
                'pro_id' => $_GET['id'],
-               'product_name' => "Shirt",
-               'product_price' => "100",
+               'product_name' => $row['product_name'],
+               'product_price' => $row['product_sale_price'],
+               'image' => $row['product_image'],
                'qty'    => 1
             ];
             $_SESSION['cart'][$pro_id]=$item;
@@ -25,8 +33,9 @@
       else{
          $item = [
             'pro_id' => $_GET['id'],
-            'product_name' => "Shirt",
-            'product_price' => "100",
+            'product_name' => $row['product_name'],
+            'product_price' => $row['product_sale_price'],
+            'image' => $row['product_image'],
             'qty'    => 1
          ];
    
@@ -69,12 +78,13 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p1.png" alt="">
+                        <img src="auth/upload/<?php echo $row['product_image'];?>" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
                            <?php echo $row['product_name'] ?>
                         </h5>
+                        
                         <h6>
                            <?php echo $row['product_sale_price'] ?>
                         </h6>
